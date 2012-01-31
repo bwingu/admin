@@ -9,11 +9,11 @@ import models.User;
 
 public class AuthenticateAction extends Controller {
 
-  public static void login(@Required String username, @Required String password){
+  public static void login(@Required String username, @Required String password, @Required String application){
 	
 	  //Création de l'objet de retour
 	  SecurityIdent securityIdent = new SecurityIdent();
-	  //On va chercher en base de donnée le user
+	  //On va chercher en base de donnée le user avec l'application
 	  User user = User.findById(username);
 	  	  
 	  //Si le user n'existe pas en base on le créé
