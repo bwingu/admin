@@ -2,12 +2,15 @@
 
 require:
     - play
-    - customModules -> Authenticate
-
+    - play -> cloudbees 0.2.2
+    - play -> db 1.1.1
+    - play -> cobertura 2.4
+    - com.bwingu -> authenticate 0.1
+    
 repositories:
 
-    - playCustomModules:
-        type: local
-        artifact: "/home/himurafred/application_mobile/play/Authenticate"
+    - bwingu:
+        type:       http
+        artifact:   "http://www.bforbrain.com/repo/[module]/[module]-[revision].zip"
         contains:
-            - customModules -> *
+            - com.bwingu -> *
